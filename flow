@@ -1,0 +1,71 @@
+graph TD
+    Start([🚀 Start Deployment]) --> Check{Have Python<br/>3.8-3.11?}
+    
+    Check -->|No| InstallPython[📥 Install Python<br/>python.org/downloads]
+    Check -->|Yes| Setup[📦 Run Setup Script]
+    
+    InstallPython --> Setup
+    
+    Setup --> CreateFiles[📝 Create Files:<br/>- app.py<br/>- requirements.txt<br/>- README.md<br/>- .gitignore]
+    
+    CreateFiles --> TestLocal{Test Locally?}
+    
+    TestLocal -->|Yes| RunLocal[▶️ Run: streamlit run app.py]
+    TestLocal -->|No| GitSetup
+    
+    RunLocal --> TestWork{App Works?}
+    
+    TestWork -->|No| Debug[🔧 Debug Issues:<br/>- Check errors<br/>- Verify files<br/>- Test PDF upload]
+    TestWork -->|Yes| GitSetup[🐙 Git Setup]
+    
+    Debug --> RunLocal
+    
+    GitSetup --> InitGit[Initialize:<br/>git init<br/>git add .<br/>git commit]
+    
+    InitGit --> CreateRepo[Create GitHub Repo<br/>github.com/new]
+    
+    CreateRepo --> PushCode[Push Code:<br/>git remote add origin<br/>git push -u origin main]
+    
+    PushCode --> ChoosePlatform{Choose Platform}
+    
+    ChoosePlatform -->|Recommended| Streamlit[☁️ Streamlit Cloud<br/>share.streamlit.io]
+    ChoosePlatform -->|AI-Focused| HuggingFace[🤗 Hugging Face<br/>huggingface.co/spaces]
+    ChoosePlatform -->|Custom| Render[🎨 Render<br/>render.com]
+    
+    Streamlit --> StreamlitSteps[1. Login with GitHub<br/>2. New App<br/>3. Select Repo<br/>4. Deploy]
+    HuggingFace --> HFSteps[1. Create Space<br/>2. Select Streamlit SDK<br/>3. Upload Files<br/>4. Deploy]
+    Render --> RenderSteps[1. New Web Service<br/>2. Connect GitHub<br/>3. Add Start Command<br/>4. Deploy]
+    
+    StreamlitSteps --> WaitDeploy[⏳ Wait 2-5 minutes<br/>for deployment]
+    HFSteps --> WaitDeploy
+    RenderSteps --> WaitDeploy
+    
+    WaitDeploy --> TestDeploy{Deployment<br/>Successful?}
+    
+    TestDeploy -->|No| FixIssues[🔍 Common Fixes:<br/>- Check requirements.txt<br/>- Verify Python version<br/>- Check logs<br/>- Reduce model size]
+    TestDeploy -->|Yes| TestLive[🧪 Test Live App:<br/>- Upload PDF<br/>- Ask questions<br/>- Verify responses]
+    
+    FixIssues --> WaitDeploy
+    
+    TestLive --> LiveWork{Works Live?}
+    
+    LiveWork -->|No| FixIssues
+    LiveWork -->|Yes| Share[🎉 Success!<br/>Share Your App]
+    
+    Share --> Monitor[📊 Monitor:<br/>- User feedback<br/>- Performance<br/>- Errors]
+    
+    Monitor --> Enhance{Want to<br/>Enhance?}
+    
+    Enhance -->|Yes| AddFeatures[➕ Add Features:<br/>- Multi-file upload<br/>- Better UI<br/>- More formats<br/>- Export options]
+    Enhance -->|No| Maintain[✅ Maintain & Update]
+    
+    AddFeatures --> PushCode
+    Maintain --> End([🏁 App is Live!])
+    
+    style Start fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style End fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style Share fill:#FF9800,stroke:#F57C00,color:#fff
+    style TestWork fill:#2196F3,stroke:#1976D2,color:#fff
+    style LiveWork fill:#2196F3,stroke:#1976D2,color:#fff
+    style Debug fill:#f44336,stroke:#c62828,color:#fff
+    style FixIssues fill:#f44336,stroke:#c62828,color:#fff

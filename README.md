@@ -1,90 +1,36 @@
-🤖 AI-Powered Document Chatbot
+# 🤖 DocQuery AI
 
-An interactive Streamlit application that allows users to upload documents (PDF, Word, Text, CSV, Excel) and analyze them using state-of-the-art NLP models from Hugging Face and Sentence Transformers.
-The chatbot can summarize, classify, extract entities, analyze complexity, and answer natural language questions based on document content.
+AI-powered document question-answering system built with Streamlit and Hugging Face.
 
-✨ Features
+## Features
+- 📄 Upload PDF, Word, or Text documents
+- 🤖 AI-powered semantic search
+- 💬 Natural language Q&A
+- ⚡ Fast and accurate responses
 
-📂 Multi-format Document Support
+## Quick Start
 
-PDF (.pdf)
+### Installation
+```bash
+pip install -r requirements.txt
+```
 
-Word (.docx)
+### Run
+```bash
+streamlit run app.py
+```
 
-Text (.txt)
+## Usage
+1. Upload your document
+2. Click "Process Document"
+3. Ask questions in natural language
+4. Get instant AI answers!
 
-CSV (.csv)
+## Technologies
+- Streamlit
+- Sentence Transformers
+- PyTorch
+- PDFPlumber
 
-Excel (.xlsx)
-
-🧠 AI-Powered Analysis
-
-Document classification (academic, business, legal, financial, etc.)
-
-Semantic text chunking and embeddings
-
-Question Answering (BERT-based)
-
-Text Summarization (BART-based)
-
-Named Entity Recognition (NER)
-
-Sentiment Analysis (RoBERTa-based)
-
-Readability & complexity scoring (Flesch-Kincaid, Flesch Reading Ease)
-
-💬 Conversational Interface
-
-Ask natural language questions
-
-Semantic + keyword search
-
-AI-generated answers with confidence scores
-
-Conversation history with export to JSON
-
-📊 Insights & Metrics
-
-AI-generated summaries
-
-Extracted key entities (people, organizations, locations, dates, numbers)
-
-Suggested topics & queries
-
-Performance metrics (query count, average confidence)
-
-🛠️ Tech Stack
-Frameworks & Libraries
-
-Streamlit
- – Interactive UI
-
-PyTorch
- – Deep learning backend
-
-Transformers
- – Hugging Face models
-
-Sentence-Transformers
- – Semantic embeddings
-
-NLTK
- – NLP preprocessing
-
-Textstat
- – Readability scores
-
-pdfplumber
- – PDF text extraction
-
-python-docx
- – Word document parsing
-
-Pandas
- – CSV & Excel parsing
-
-Scikit-learn
- – TF-IDF and similarity search
-
-NumPy
- – Array/matrix operations
+## License
+MIT
